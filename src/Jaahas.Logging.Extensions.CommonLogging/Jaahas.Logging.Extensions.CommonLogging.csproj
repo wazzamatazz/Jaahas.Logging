@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
+    <Description>Allows Common.Logging to be used with Microsoft.Extensions.Logging.</Description>
+  </PropertyGroup>
+
+  <!-- Different Common.Logging minimum version required for .NET Standard 2.0 compatibility. -->
+  <Choose>
+    <When Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+      <PropertyGroup>
+        <CommonLoggingVersion>3.4.1</CommonLoggingVersion>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <CommonLoggingVersion>3.3.1</CommonLoggingVersion>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  
+  <ItemGroup>
+    <PackageReference Include="Common.Logging" Version="$(CommonLoggingVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>
