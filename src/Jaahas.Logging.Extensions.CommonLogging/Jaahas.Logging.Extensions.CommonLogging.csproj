@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <Description>Allows Common.Logging to be used with Microsoft.Extensions.Logging.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <!-- Different Common.Logging minimum version required for .NET Standard 2.0 compatibility. -->
