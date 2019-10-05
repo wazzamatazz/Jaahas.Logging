@@ -1,0 +1,1 @@
+﻿Demonstrates logging from `Microsoft.Extensions.Logging` to `Common.Logging` to `log4net`.
