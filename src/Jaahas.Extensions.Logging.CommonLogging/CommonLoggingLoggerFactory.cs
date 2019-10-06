@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
 
-namespace Jaahas.Logging.Extensions.CommonLogging {
+namespace Jaahas.Extensions.Logging.CommonLogging {
     public class CommonLoggingLoggerFactory : ILoggerFactory {
 
         private bool _isDisposed;

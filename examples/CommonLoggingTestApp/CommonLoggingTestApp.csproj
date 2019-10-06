@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Jaahas.Logging.Extensions.CommonLogging\Jaahas.Logging.Extensions.CommonLogging.csproj" />
+    <ProjectReference Include="..\..\src\Jaahas.Extensions.Logging.CommonLogging\Jaahas.Extensions.Logging.CommonLogging.csproj" />
   </ItemGroup>
 
 </Project>

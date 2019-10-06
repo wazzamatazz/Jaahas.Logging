@@ -5,7 +5,7 @@ namespace CommonLoggingTestApp {
     class Program {
 
         static void Main() {
-            var factory = Jaahas.Logging.Extensions.CommonLogging.CommonLoggingLoggerFactory.Default;
+            var factory = Jaahas.Extensions.Logging.CommonLogging.CommonLoggingLoggerFactory.Default;
             var logger = factory.CreateLogger(typeof(Program));
 
             logger.LogTrace("Trace message!");
