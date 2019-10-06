@@ -10,10 +10,7 @@
     <Authors>Graham Watts</Authors>
     <CopyrightStartYear>2019</CopyrightStartYear>
     <PackageProjectUrl>https://github.com/wazzamatazz/Jaahas.Logging</PackageProjectUrl>
-    <PackageOutputPath>$(MSBuildThisFileDirectory)artifacts</PackageOutputPath>
-    <Version>1.0.1</Version>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)artifacts\packages\$(Configuration)</PackageOutputPath>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
