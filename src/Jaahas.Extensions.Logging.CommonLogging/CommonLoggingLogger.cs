@@ -15,6 +15,11 @@ namespace Jaahas.Extensions.Logging.CommonLogging {
         /// </summary>
         private readonly ILog _log;
 
+        /// <summary>
+        /// Stores scope data.
+        /// </summary>
+        private readonly IExternalScopeProvider _scopeProvider;
+
 
         /// <summary>
         /// Creates a new <see cref="CommonLoggingLogger"/> object.
@@ -22,11 +27,15 @@ namespace Jaahas.Extensions.Logging.CommonLogging {
         /// <param name="log">
         ///   The underlying log to write messages to.
         /// </param>
+        /// <param name="scopeProvider">
+        ///   The <see cref="IExternalScopeProvider"/> service to store scope data in. Can be <see langword="null"/>.
+        /// </param>
         /// <exception cref="ArgumentNullException">
         ///   <paramref name="log"/> is <see langword="null"/>.
         /// </exception>
-        public CommonLoggingLogger(ILog log) {
+        public CommonLoggingLogger(ILog log, IExternalScopeProvider scopeProvider = null) {
             _log = log ?? throw new ArgumentNullException(nameof(log));
+            _scopeProvider = scopeProvider;
         }
 
 
@@ -115,8 +124,17 @@ namespace Jaahas.Extensions.Logging.CommonLogging {
                 return;
             }
 
-            var message = formatter(state, exception);
-            LogMessage(logLevel, message, exception);
+            var sb = new System.Text.StringBuilder();
+
+            if (_scopeProvider != null) {
+                _scopeProvider.ForEachScope((scope, builder) => {
+                    builder.Append(scope);
+                    builder.Append(" => ");
+                }, sb);
+            }
+
+            sb.Append(formatter(state, exception));
+            LogMessage(logLevel, sb.ToString(), exception);
         }
 
 
@@ -165,7 +183,7 @@ namespace Jaahas.Extensions.Logging.CommonLogging {
         ///   A disposable scope object.
         /// </returns>
         public IDisposable BeginScope<TState>(TState state) {
-            return NullScope.Instance;
+            return _scopeProvider?.Push(state) ?? NullScope.Instance;
         }
 
 

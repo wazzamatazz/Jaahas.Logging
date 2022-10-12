@@ -17,7 +17,7 @@ namespace Jaahas.Extensions.Logging.CommonLogging {
 
 
         public CommonLoggingLoggerFactory(CommonLoggingLoggerProvider provider) {
-            _provider = provider ?? new CommonLoggingLoggerProvider(new Common.Logging.LogManager());
+            _provider = provider ?? new CommonLoggingLoggerProvider(new Common.Logging.LogManager(), new LoggerExternalScopeProvider());
         }
 
 
