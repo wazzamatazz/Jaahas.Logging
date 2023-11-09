@@ -102,6 +102,9 @@ namespace Jaahas.CommonLogging.MicrosoftAdapter {
                 case Common.Logging.LogLevel.Error:
                     _logger.LogError(exception, Convert.ToString(message));
                     break;
+                case Common.Logging.LogLevel.Warn:
+                    _logger.LogWarning(exception, Convert.ToString(message));
+                    break;
                 case Common.Logging.LogLevel.Fatal:
                     _logger.LogCritical(exception, Convert.ToString(message));
                     break;
