@@ -1,5 +1,6 @@
 ﻿using Common.Logging;
 using Common.Logging.Factory;
+
 using Microsoft.Extensions.Logging;
 
 namespace Jaahas.CommonLogging.MicrosoftAdapter {
