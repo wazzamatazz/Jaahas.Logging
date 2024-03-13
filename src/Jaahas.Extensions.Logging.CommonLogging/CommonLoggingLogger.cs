@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 using Common.Logging;
 using Microsoft.Extensions.Logging;
 
@@ -127,13 +129,21 @@ namespace Jaahas.Extensions.Logging.CommonLogging {
             var sb = new System.Text.StringBuilder();
 
             if (_scopeProvider != null) {
-                _scopeProvider.ForEachScope((scope, builder) => {
-                    builder.Append(scope);
-                    builder.Append(" => ");
+                _scopeProvider.ForEachScope((scopeInstance, builder) => {
+                    if (scopeInstance is IDictionary<string, object> dict) {
+                        sb.Append(System.Text.Json.JsonSerializer.Serialize(dict));
+                    }
+                    else {
+                        sb.Append(System.Text.Json.JsonSerializer.Serialize(new Dictionary<string, object>() {
+                            ["None"] = scopeInstance
+                        }));
+                    }
+                    sb.Append(" ");
                 }, sb);
             }
 
             sb.Append(formatter(state, exception));
+
             LogMessage(logLevel, sb.ToString(), exception);
         }
 
