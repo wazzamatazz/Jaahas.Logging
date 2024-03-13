@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 using Microsoft.Extensions.Logging;
 
 namespace CommonLoggingTestApp {
@@ -25,7 +27,9 @@ namespace CommonLoggingTestApp {
                 }
 
                 using (logger.BeginScope("with_scope"))
-                using (logger.BeginScope("with_delegated_scope")) {
+                using (logger.BeginScope(new Dictionary<string, string>() {
+                    ["details"] = "with_delegated_scope"
+                })) {
                     item.Invoke();
                 }
             }
