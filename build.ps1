@@ -83,9 +83,9 @@ if ([string]::IsNullOrEmpty($Version.PreRelease)) {
     $PackageVersion = "$($MajorMinorPatchVersion)-$($Version.PreRelease)"
 }
 
-$MSBuildArguments += "/p:""AssemblyVersion=$($AssemblyVersion)"""
-$MSBuildArguments += "/p:""FileVersion=$($FileVersion)"""
-$MSBuildArguments += "/p:""Version=$($PackageVersion)"""
+$MSBuildArguments += "/p:AssemblyVersion=$($AssemblyVersion)"
+$MSBuildArguments += "/p:FileVersion=$($FileVersion)"
+$MSBuildArguments += "/p:Version=$($PackageVersion)"
 
 $local:exit_code = $null
 try {
