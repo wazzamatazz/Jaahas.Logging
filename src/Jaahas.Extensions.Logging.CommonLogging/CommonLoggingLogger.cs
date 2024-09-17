@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 using Common.Logging;
+
 using Microsoft.Extensions.Logging;
 
 namespace Jaahas.Extensions.Logging.CommonLogging {

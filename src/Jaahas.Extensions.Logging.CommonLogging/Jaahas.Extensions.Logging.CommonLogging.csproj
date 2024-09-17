@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
     <Description>Allows Microsoft.Extensions.Logging to write log messages to Common.Logging.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <!-- Different Common.Logging minimum version required for .NET Standard 2.0 compatibility. -->
@@ -22,7 +23,11 @@
   <ItemGroup>
     <PackageReference Include="Common.Logging" Version="$(CommonLoggingVersion)" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
-    <PackageReference Include="System.Text.Json" Version="8.0.3" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md" Pack="true" />
   </ItemGroup>
 
 </Project>
