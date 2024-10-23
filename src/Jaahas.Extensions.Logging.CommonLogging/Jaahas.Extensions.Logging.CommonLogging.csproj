@@ -5,25 +5,11 @@
     <Description>Allows Microsoft.Extensions.Logging to write log messages to Common.Logging.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
-
-  <!-- Different Common.Logging minimum version required for .NET Standard 2.0 compatibility. -->
-  <Choose>
-    <When Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-      <PropertyGroup>
-        <CommonLoggingVersion>3.4.1</CommonLoggingVersion>
-      </PropertyGroup>
-    </When>
-    <Otherwise>
-      <PropertyGroup>
-        <CommonLoggingVersion>3.3.1</CommonLoggingVersion>
-      </PropertyGroup>
-    </Otherwise>
-  </Choose>
   
   <ItemGroup>
-    <PackageReference Include="Common.Logging" Version="$(CommonLoggingVersion)" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
-    <PackageReference Include="System.Text.Json" Version="8.0.4" />
+    <PackageReference Include="Common.Logging" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="System.Text.Json" />
   </ItemGroup>
 
   <ItemGroup>

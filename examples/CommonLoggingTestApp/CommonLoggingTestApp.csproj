@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Common.Logging.Log4Net208" Version="3.4.1" />
+    <PackageReference Include="Common.Logging.Log4Net208" />
   </ItemGroup>
 
   <ItemGroup>
