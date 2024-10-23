@@ -1,0 +1,17 @@
+<Project>
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <EnablePackageVersionOverride>false</EnablePackageVersionOverride>
+    <NoWarn>NU1507;$(NoWarn)</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Common.Logging" Version="3.4.1" />
+    <PackageVersion Include="Common.Logging.Log4Net208" Version="3.4.1" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+    <PackageVersion Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+  
+</Project>
