@@ -16,7 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{5CCE11C4-3BC2-4F23-BEF5-3556578A11A1}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		build.ps1 = build.ps1
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
 		Directory.Packages.props = Directory.Packages.props
