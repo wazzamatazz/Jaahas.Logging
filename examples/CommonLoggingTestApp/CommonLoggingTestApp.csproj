@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="Common.Logging.Log4Net208" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
   </ItemGroup>
 
   <ItemGroup>
