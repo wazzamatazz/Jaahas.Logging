@@ -76,7 +76,7 @@ namespace Microsoft.Extensions.Logging {
         ///   The <see cref="ILoggingBuilder"/>.
         /// </param>
         private static void AddCommonLoggingLoggerProvider(this ILoggingBuilder builder) {
-            builder.Services.TryAddEnumerable(ServiceDescriptor.Singleton<ILoggerProvider>(provider => ActivatorUtilities.CreateInstance<CommonLoggingLoggerProvider>(provider, provider.GetService<IExternalScopeProvider>() ?? new LoggerExternalScopeProvider())));
+            builder.Services.TryAddEnumerable(ServiceDescriptor.Singleton<ILoggerProvider, CommonLoggingLoggerProvider>(provider => ActivatorUtilities.CreateInstance<CommonLoggingLoggerProvider>(provider, provider.GetService<IExternalScopeProvider>() ?? new LoggerExternalScopeProvider())));
         }
 
     }
